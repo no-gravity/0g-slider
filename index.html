@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+	<title>noUiSlider Example</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="jquery.liblink.js"></script>
+<script src="jquery.nouislider.js"></script>
+<link rel="stylesheet" href="jquery.nouislider.css">
+
+<style>
+.container 
+{
+	margin: 40px;
+	width: 200px;
+	background: #f0f0f0;
+	padding: 20px 30px 30px 30px;
+	font-family: arial;
+	color: #202020;
+}
+
+.value
+{
+	margin-bottom: 20px;
+}
+</style>
+
+<div class=container>
+	<div class=value>Value: <span id=test>0</span></div>
+	<div id=slider_test></div>
+</div>
+
+<script>
+var settings={
+	start: 1,
+	range: {min:1, max:100},
+	step: 1,
+	format: { to:   value => { return Math.round(value*100)/100; },
+	          from: value => { return value; } }
+};
+$('#slider_test').noUiSlider(settings);
+$("#slider_test").Link('lower').to($("#test"))
+</script>
+
+<div class=container>
+	<div class=value>Range: <span id=test2_min></span> - <span id=test2_max></span></div>
+	<div id=slider_test2></div>
+</div>
+
+<script>
+var settings={
+	start: [0,100],
+	range: {min:1, max:100},
+	step: 1,
+	format: { to:   value => { return Math.round(value*100)/100; },
+	          from: value => { return value; } }
+};
+$('#slider_test2').noUiSlider(settings);
+$("#slider_test2").Link('lower').to($("#test2_min"))
+$("#slider_test2").Link('upper').to($("#test2_max"))
+</Script>
+
+</body>
+</html>
