@@ -61,13 +61,13 @@
 /* Slider size and handle placement;
  */
 .noUi-horizontal {
-	height: 18px;
+	height: 10px;
 }
 .noUi-horizontal .noUi-handle {
-	width: 34px;
-	height: 28px;
-	left: -17px;
-	top: -6px;
+	width : 20px;
+	height: 20px;
+	left  : -10px;
+	top   : -6px;
 }
 .noUi-vertical {
 	width: 18px;
@@ -96,7 +96,7 @@
 }
 .noUi-target {
 	border-radius: 4px;
-	border: 1px solid #D3D3D3;
+	border: 1px solid #c0c0c0;
 	box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
 }
 .noUi-target.noUi-connect {
@@ -112,8 +112,8 @@
 	cursor: n-resize;
 }
 .noUi-handle {
-	border: 1px solid #D9D9D9;
-	border-radius: 3px;
+	border: 1px solid #909090;
+	border-radius: 30px;
 	background: #FFF;
 	cursor: default;
 	box-shadow: inset 0 0 1px #FFF,
@@ -126,22 +126,6 @@
 				0 3px 6px -3px #BBB;
 }
 
-/* Handle stripes;
- */
-.noUi-handle:before,
-.noUi-handle:after {
-	content: "";
-	display: block;
-	position: absolute;
-	height: 14px;
-	width: 1px;
-	background: #E8E7E6;
-	left: 14px;
-	top: 6px;
-}
-.noUi-handle:after {
-	left: 17px;
-}
 .noUi-vertical .noUi-handle:before,
 .noUi-vertical .noUi-handle:after {
 	width: 14px;
