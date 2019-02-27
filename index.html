@@ -12,14 +12,22 @@
 <script src="jquery.nouislider.js"></script>
 <link rel="stylesheet" href="jquery.nouislider.css">
 
+<link id=style rel=stylesheet href="demo/style-default.css">
+
 <style>
+
+body
+{
+	padding: 40px;
+	font-family: arial;
+}
+
 .container 
 {
-	margin: 40px;
+	margin-bottom: 40px;
 	width: 200px;
 	background: #f0f0f0;
 	padding: 20px 30px 30px 30px;
-	font-family: arial;
 	color: #202020;
 }
 
@@ -63,6 +71,40 @@ $('#slider_test2').noUiSlider(settings);
 $("#slider_test2").Link('lower').to($("#test2_min"))
 $("#slider_test2").Link('upper').to($("#test2_max"))
 </Script>
+
+
+
+
+
+
+
+
+
+<!-- Style selector start-->
+
+<style>
+ label::after { content: ""; display: block; }
+</style>
+
+<p>Try different styles:</p>
+
+<label><input type=radio name=style value=default checked> Default</label>
+<label><input type=radio name=style value=original> Original noUiSlider style</label>
+
+<script>
+	document.querySelectorAll('input').forEach(e=>{
+		e.addEventListener('change',styleChange);
+	});
+
+	function styleChange(e)
+	{
+		console.log(e.target.value);
+		let url='demo/style-'+e.target.value+'.css';
+		document.querySelector('#style').href=url;
+	}
+</script>
+
+<!-- Style selector end -->
 
 </body>
 </html>
